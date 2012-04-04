@@ -1,0 +1,735 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	   
+	<bean id="terrain" class="ranball.domain.Terrain">
+	    <property name="cells">
+    		<list>
+		        <list>
+    		        <ref bean="cell1" />
+    		        <ref bean="cell2" />
+    		        <ref bean="cell3" />
+    		        <ref bean="cell4" />
+    		        <ref bean="cell5" />
+    		        <ref bean="cell6" />
+    		        <ref bean="cell7" />
+    		        <ref bean="cell8" />
+    		        <ref bean="cell9" />
+    		        <ref bean="cell10" />
+    		    </list>
+		        <list>
+    		        <ref bean="cell11" />
+    		        <ref bean="cell12" />
+    		        <ref bean="cell13" />
+    		        <ref bean="cell14" />
+    		        <ref bean="cell15" />
+    		        <ref bean="cell16" />
+    		        <ref bean="cell17" />
+    		        <ref bean="cell18" />
+    		        <ref bean="cell19" />
+    		        <ref bean="cell20" />
+    		    </list>
+		        <list>
+    		        <ref bean="cell21" />
+    		        <ref bean="cell22" />
+    		        <ref bean="cell23" />
+    		        <ref bean="cell24" />
+    		        <ref bean="cell25" />
+    		        <ref bean="cell26" />
+    		        <ref bean="cell27" />
+    		        <ref bean="cell28" />
+    		        <ref bean="cell29" />
+    		        <ref bean="cell30" />
+    		    </list>
+		        <list>
+    		        <ref bean="cell31" />
+    		        <ref bean="cell32" />
+    		        <ref bean="cell33" />
+    		        <ref bean="cell34" />
+    		        <ref bean="cell35" />
+    		        <ref bean="cell36" />
+    		        <ref bean="cell37" />
+    		        <ref bean="cell38" />
+    		        <ref bean="cell39" />
+    		        <ref bean="cell40" />
+    		    </list>
+		        <list>
+    		        <ref bean="cell41" />
+    		        <ref bean="cell42" />
+    		        <ref bean="cell43" />
+    		        <ref bean="cell44" />
+    		        <ref bean="cell45" />
+    		        <ref bean="cell46" />
+    		        <ref bean="cell47" />
+    		        <ref bean="cell48" />
+    		        <ref bean="cell49" />
+    		        <ref bean="cell50" />
+    		    </list>
+		        <list>
+    		        <ref bean="cell51" />
+    		        <ref bean="cell52" />
+    		        <ref bean="cell53" />
+    		        <ref bean="cell54" />
+    		        <ref bean="cell55" />
+    		        <ref bean="cell56" />
+    		        <ref bean="cell57" />
+    		        <ref bean="cell58" />
+    		        <ref bean="cell59" />
+    		        <ref bean="cell60" />
+    		    </list>
+		        <list>
+    		        <ref bean="cell61" />
+    		        <ref bean="cell62" />
+    		        <ref bean="cell63" />
+    		        <ref bean="cell64" />
+    		        <ref bean="cell65" />
+    		        <ref bean="cell66" />
+    		        <ref bean="cell67" />
+    		        <ref bean="cell68" />
+    		        <ref bean="cell69" />
+    		        <ref bean="cell70" />
+    		    </list>
+		        <list>
+    		        <ref bean="cell71" />
+    		        <ref bean="cell72" />
+    		        <ref bean="cell73" />
+    		        <ref bean="cell74" />
+    		        <ref bean="cell75" />
+    		        <ref bean="cell76" />
+    		        <ref bean="cell77" />
+    		        <ref bean="cell78" />
+    		        <ref bean="cell79" />
+    		        <ref bean="cell80" />
+    		    </list>
+		        <list>
+    		        <ref bean="cell81" />
+    		        <ref bean="cell82" />
+    		        <ref bean="cell83" />
+    		        <ref bean="cell84" />
+    		        <ref bean="cell85" />
+    		        <ref bean="cell86" />
+    		        <ref bean="cell87" />
+    		        <ref bean="cell88" />
+    		        <ref bean="cell89" />
+    		        <ref bean="cell90" />
+    		    </list>
+		        <list>
+    		        <ref bean="cell91" />
+    		        <ref bean="cell92" />
+    		        <ref bean="cell93" />
+    		        <ref bean="cell94" />
+    		        <ref bean="cell95" />
+    		        <ref bean="cell96" />
+    		        <ref bean="cell97" />
+    		        <ref bean="cell98" />
+    		        <ref bean="cell99" />
+    		        <ref bean="cell100" />
+    		    </list>
+		    </list>
+	    </property>
+	</bean>    
+    
+	    <bean id="cell1" class="ranball.domain.Cell">
+    	<property name="id" value="1"/>
+    	<property name="type" value="5"/>
+    	<property name="coord" value="1"/>
+    </bean>
+	
+    <bean id="cell2" class="ranball.domain.Cell">
+    	<property name="id" value="2"/>
+    	<property name="type" value="5"/>
+    	<property name="coord" value="2"/>
+    </bean>
+	
+    <bean id="cell3" class="ranball.domain.Cell">
+    	<property name="id" value="3"/>
+    	<property name="type" value="2"/>
+    	<property name="coord" value="3"/>
+    </bean>
+	
+    <bean id="cell4" class="ranball.domain.Cell">
+    	<property name="id" value="4"/>
+    	<property name="type" value="0"/>
+    	<property name="coord" value="4"/>
+    </bean>
+	
+    <bean id="cell5" class="ranball.domain.Cell">
+    	<property name="id" value="5"/>
+    	<property name="type" value="2"/>
+    	<property name="coord" value="5"/>
+    </bean>
+	
+    <bean id="cell6" class="ranball.domain.Cell">
+    	<property name="id" value="6"/>
+    	<property name="type" value="0"/>
+    	<property name="coord" value="6"/>
+    </bean>
+	
+    <bean id="cell7" class="ranball.domain.Cell">
+    	<property name="id" value="7"/>
+    	<property name="type" value="6"/>
+    	<property name="coord" value="7"/>
+    </bean>
+	
+    <bean id="cell8" class="ranball.domain.Cell">
+    	<property name="id" value="8"/>
+    	<property name="type" value="4"/>
+    	<property name="coord" value="8"/>
+    </bean>
+	
+    <bean id="cell9" class="ranball.domain.Cell">
+    	<property name="id" value="9"/>
+    	<property name="type" value="6"/>
+    	<property name="coord" value="9"/>
+    </bean>
+	
+    <bean id="cell10" class="ranball.domain.Cell">
+    	<property name="id" value="10"/>
+    	<property name="type" value="6"/>
+    	<property name="coord" value="10"/>
+    </bean>
+	
+    <bean id="cell11" class="ranball.domain.Cell">
+    	<property name="id" value="11"/>
+    	<property name="type" value="1"/>
+    	<property name="coord" value="11"/>
+    </bean>
+	
+    <bean id="cell12" class="ranball.domain.Cell">
+    	<property name="id" value="12"/>
+    	<property name="type" value="0"/>
+    	<property name="coord" value="12"/>
+    </bean>
+	
+    <bean id="cell13" class="ranball.domain.Cell">
+    	<property name="id" value="13"/>
+    	<property name="type" value="2"/>
+    	<property name="coord" value="13"/>
+    </bean>
+	
+    <bean id="cell14" class="ranball.domain.Cell">
+    	<property name="id" value="14"/>
+    	<property name="type" value="4"/>
+    	<property name="coord" value="14"/>
+    </bean>
+	
+    <bean id="cell15" class="ranball.domain.Cell">
+    	<property name="id" value="15"/>
+    	<property name="type" value="5"/>
+    	<property name="coord" value="15"/>
+    </bean>
+	
+    <bean id="cell16" class="ranball.domain.Cell">
+    	<property name="id" value="16"/>
+    	<property name="type" value="1"/>
+    	<property name="coord" value="16"/>
+    </bean>
+	
+    <bean id="cell17" class="ranball.domain.Cell">
+    	<property name="id" value="17"/>
+    	<property name="type" value="0"/>
+    	<property name="coord" value="17"/>
+    </bean>
+	
+    <bean id="cell18" class="ranball.domain.Cell">
+    	<property name="id" value="18"/>
+    	<property name="type" value="2"/>
+    	<property name="coord" value="18"/>
+    </bean>
+	
+    <bean id="cell19" class="ranball.domain.Cell">
+    	<property name="id" value="19"/>
+    	<property name="type" value="1"/>
+    	<property name="coord" value="19"/>
+    </bean>
+	
+    <bean id="cell20" class="ranball.domain.Cell">
+    	<property name="id" value="20"/>
+    	<property name="type" value="5"/>
+    	<property name="coord" value="20"/>
+    </bean>
+	
+    <bean id="cell21" class="ranball.domain.Cell">
+    	<property name="id" value="21"/>
+    	<property name="type" value="4"/>
+    	<property name="coord" value="21"/>
+    </bean>
+	
+    <bean id="cell22" class="ranball.domain.Cell">
+    	<property name="id" value="22"/>
+    	<property name="type" value="4"/>
+    	<property name="coord" value="22"/>
+    </bean>
+	
+    <bean id="cell23" class="ranball.domain.Cell">
+    	<property name="id" value="23"/>
+    	<property name="type" value="1"/>
+    	<property name="coord" value="23"/>
+    </bean>
+	
+    <bean id="cell24" class="ranball.domain.Cell">
+    	<property name="id" value="24"/>
+    	<property name="type" value="4"/>
+    	<property name="coord" value="24"/>
+    </bean>
+	
+    <bean id="cell25" class="ranball.domain.Cell">
+    	<property name="id" value="25"/>
+    	<property name="type" value="6"/>
+    	<property name="coord" value="25"/>
+    </bean>
+	
+    <bean id="cell26" class="ranball.domain.Cell">
+    	<property name="id" value="26"/>
+    	<property name="type" value="6"/>
+    	<property name="coord" value="26"/>
+    </bean>
+	
+    <bean id="cell27" class="ranball.domain.Cell">
+    	<property name="id" value="27"/>
+    	<property name="type" value="3"/>
+    	<property name="coord" value="27"/>
+    </bean>
+	
+    <bean id="cell28" class="ranball.domain.Cell">
+    	<property name="id" value="28"/>
+    	<property name="type" value="0"/>
+    	<property name="coord" value="28"/>
+    </bean>
+	
+    <bean id="cell29" class="ranball.domain.Cell">
+    	<property name="id" value="29"/>
+    	<property name="type" value="3"/>
+    	<property name="coord" value="29"/>
+    </bean>
+	
+    <bean id="cell30" class="ranball.domain.Cell">
+    	<property name="id" value="30"/>
+    	<property name="type" value="1"/>
+    	<property name="coord" value="30"/>
+    </bean>
+	
+    <bean id="cell31" class="ranball.domain.Cell">
+    	<property name="id" value="31"/>
+    	<property name="type" value="3"/>
+    	<property name="coord" value="31"/>
+    </bean>
+	
+    <bean id="cell32" class="ranball.domain.Cell">
+    	<property name="id" value="32"/>
+    	<property name="type" value="2"/>
+    	<property name="coord" value="32"/>
+    </bean>
+	
+    <bean id="cell33" class="ranball.domain.Cell">
+    	<property name="id" value="33"/>
+    	<property name="type" value="6"/>
+    	<property name="coord" value="33"/>
+    </bean>
+	
+    <bean id="cell34" class="ranball.domain.Cell">
+    	<property name="id" value="34"/>
+    	<property name="type" value="2"/>
+    	<property name="coord" value="34"/>
+    </bean>
+	
+    <bean id="cell35" class="ranball.domain.Cell">
+    	<property name="id" value="35"/>
+    	<property name="type" value="4"/>
+    	<property name="coord" value="35"/>
+    </bean>
+	
+    <bean id="cell36" class="ranball.domain.Cell">
+    	<property name="id" value="36"/>
+    	<property name="type" value="1"/>
+    	<property name="coord" value="36"/>
+    </bean>
+	
+    <bean id="cell37" class="ranball.domain.Cell">
+    	<property name="id" value="37"/>
+    	<property name="type" value="0"/>
+    	<property name="coord" value="37"/>
+    </bean>
+	
+    <bean id="cell38" class="ranball.domain.Cell">
+    	<property name="id" value="38"/>
+    	<property name="type" value="4"/>
+    	<property name="coord" value="38"/>
+    </bean>
+	
+    <bean id="cell39" class="ranball.domain.Cell">
+    	<property name="id" value="39"/>
+    	<property name="type" value="5"/>
+    	<property name="coord" value="39"/>
+    </bean>
+	
+    <bean id="cell40" class="ranball.domain.Cell">
+    	<property name="id" value="40"/>
+    	<property name="type" value="5"/>
+    	<property name="coord" value="40"/>
+    </bean>
+	
+    <bean id="cell41" class="ranball.domain.Cell">
+    	<property name="id" value="41"/>
+    	<property name="type" value="1"/>
+    	<property name="coord" value="41"/>
+    </bean>
+	
+    <bean id="cell42" class="ranball.domain.Cell">
+    	<property name="id" value="42"/>
+    	<property name="type" value="3"/>
+    	<property name="coord" value="42"/>
+    </bean>
+	
+    <bean id="cell43" class="ranball.domain.Cell">
+    	<property name="id" value="43"/>
+    	<property name="type" value="1"/>
+    	<property name="coord" value="43"/>
+    </bean>
+	
+    <bean id="cell44" class="ranball.domain.Cell">
+    	<property name="id" value="44"/>
+    	<property name="type" value="6"/>
+    	<property name="coord" value="44"/>
+    </bean>
+	
+    <bean id="cell45" class="ranball.domain.Cell">
+    	<property name="id" value="45"/>
+    	<property name="type" value="2"/>
+    	<property name="coord" value="45"/>
+    </bean>
+	
+    <bean id="cell46" class="ranball.domain.Cell">
+    	<property name="id" value="46"/>
+    	<property name="type" value="4"/>
+    	<property name="coord" value="46"/>
+    </bean>
+	
+    <bean id="cell47" class="ranball.domain.Cell">
+    	<property name="id" value="47"/>
+    	<property name="type" value="1"/>
+    	<property name="coord" value="47"/>
+    </bean>
+	
+    <bean id="cell48" class="ranball.domain.Cell">
+    	<property name="id" value="48"/>
+    	<property name="type" value="6"/>
+    	<property name="coord" value="48"/>
+    </bean>
+	
+    <bean id="cell49" class="ranball.domain.Cell">
+    	<property name="id" value="49"/>
+    	<property name="type" value="2"/>
+    	<property name="coord" value="49"/>
+    </bean>
+	
+    <bean id="cell50" class="ranball.domain.Cell">
+    	<property name="id" value="50"/>
+    	<property name="type" value="2"/>
+    	<property name="coord" value="50"/>
+    </bean>
+	
+    <bean id="cell51" class="ranball.domain.Cell">
+    	<property name="id" value="51"/>
+    	<property name="type" value="2"/>
+    	<property name="coord" value="51"/>
+    </bean>
+	
+    <bean id="cell52" class="ranball.domain.Cell">
+    	<property name="id" value="52"/>
+    	<property name="type" value="1"/>
+    	<property name="coord" value="52"/>
+    </bean>
+	
+    <bean id="cell53" class="ranball.domain.Cell">
+    	<property name="id" value="53"/>
+    	<property name="type" value="1"/>
+    	<property name="coord" value="53"/>
+    </bean>
+	
+    <bean id="cell54" class="ranball.domain.Cell">
+    	<property name="id" value="54"/>
+    	<property name="type" value="1"/>
+    	<property name="coord" value="54"/>
+    </bean>
+	
+    <bean id="cell55" class="ranball.domain.Cell">
+    	<property name="id" value="55"/>
+    	<property name="type" value="6"/>
+    	<property name="coord" value="55"/>
+    </bean>
+	
+    <bean id="cell56" class="ranball.domain.Cell">
+    	<property name="id" value="56"/>
+    	<property name="type" value="1"/>
+    	<property name="coord" value="56"/>
+    </bean>
+	
+    <bean id="cell57" class="ranball.domain.Cell">
+    	<property name="id" value="57"/>
+    	<property name="type" value="3"/>
+    	<property name="coord" value="57"/>
+    </bean>
+	
+    <bean id="cell58" class="ranball.domain.Cell">
+    	<property name="id" value="58"/>
+    	<property name="type" value="3"/>
+    	<property name="coord" value="58"/>
+    </bean>
+	
+    <bean id="cell59" class="ranball.domain.Cell">
+    	<property name="id" value="59"/>
+    	<property name="type" value="4"/>
+    	<property name="coord" value="59"/>
+    </bean>
+	
+    <bean id="cell60" class="ranball.domain.Cell">
+    	<property name="id" value="60"/>
+    	<property name="type" value="4"/>
+    	<property name="coord" value="60"/>
+    </bean>
+	
+    <bean id="cell61" class="ranball.domain.Cell">
+    	<property name="id" value="61"/>
+    	<property name="type" value="6"/>
+    	<property name="coord" value="61"/>
+    </bean>
+	
+    <bean id="cell62" class="ranball.domain.Cell">
+    	<property name="id" value="62"/>
+    	<property name="type" value="3"/>
+    	<property name="coord" value="62"/>
+    </bean>
+	
+    <bean id="cell63" class="ranball.domain.Cell">
+    	<property name="id" value="63"/>
+    	<property name="type" value="6"/>
+    	<property name="coord" value="63"/>
+    </bean>
+	
+    <bean id="cell64" class="ranball.domain.Cell">
+    	<property name="id" value="64"/>
+    	<property name="type" value="3"/>
+    	<property name="coord" value="64"/>
+    </bean>
+	
+    <bean id="cell65" class="ranball.domain.Cell">
+    	<property name="id" value="65"/>
+    	<property name="type" value="6"/>
+    	<property name="coord" value="65"/>
+    </bean>
+	
+    <bean id="cell66" class="ranball.domain.Cell">
+    	<property name="id" value="66"/>
+    	<property name="type" value="6"/>
+    	<property name="coord" value="66"/>
+    </bean>
+	
+    <bean id="cell67" class="ranball.domain.Cell">
+    	<property name="id" value="67"/>
+    	<property name="type" value="1"/>
+    	<property name="coord" value="67"/>
+    </bean>
+	
+    <bean id="cell68" class="ranball.domain.Cell">
+    	<property name="id" value="68"/>
+    	<property name="type" value="6"/>
+    	<property name="coord" value="68"/>
+    </bean>
+	
+    <bean id="cell69" class="ranball.domain.Cell">
+    	<property name="id" value="69"/>
+    	<property name="type" value="5"/>
+    	<property name="coord" value="69"/>
+    </bean>
+	
+    <bean id="cell70" class="ranball.domain.Cell">
+    	<property name="id" value="70"/>
+    	<property name="type" value="5"/>
+    	<property name="coord" value="70"/>
+    </bean>
+	
+    <bean id="cell71" class="ranball.domain.Cell">
+    	<property name="id" value="71"/>
+    	<property name="type" value="4"/>
+    	<property name="coord" value="71"/>
+    </bean>
+	
+    <bean id="cell72" class="ranball.domain.Cell">
+    	<property name="id" value="72"/>
+    	<property name="type" value="5"/>
+    	<property name="coord" value="72"/>
+    </bean>
+	
+    <bean id="cell73" class="ranball.domain.Cell">
+    	<property name="id" value="73"/>
+    	<property name="type" value="1"/>
+    	<property name="coord" value="73"/>
+    </bean>
+	
+    <bean id="cell74" class="ranball.domain.Cell">
+    	<property name="id" value="74"/>
+    	<property name="type" value="1"/>
+    	<property name="coord" value="74"/>
+    </bean>
+	
+    <bean id="cell75" class="ranball.domain.Cell">
+    	<property name="id" value="75"/>
+    	<property name="type" value="0"/>
+    	<property name="coord" value="75"/>
+    </bean>
+	
+    <bean id="cell76" class="ranball.domain.Cell">
+    	<property name="id" value="76"/>
+    	<property name="type" value="0"/>
+    	<property name="coord" value="76"/>
+    </bean>
+	
+    <bean id="cell77" class="ranball.domain.Cell">
+    	<property name="id" value="77"/>
+    	<property name="type" value="4"/>
+    	<property name="coord" value="77"/>
+    </bean>
+	
+    <bean id="cell78" class="ranball.domain.Cell">
+    	<property name="id" value="78"/>
+    	<property name="type" value="6"/>
+    	<property name="coord" value="78"/>
+    </bean>
+	
+    <bean id="cell79" class="ranball.domain.Cell">
+    	<property name="id" value="79"/>
+    	<property name="type" value="4"/>
+    	<property name="coord" value="79"/>
+    </bean>
+	
+    <bean id="cell80" class="ranball.domain.Cell">
+    	<property name="id" value="80"/>
+    	<property name="type" value="6"/>
+    	<property name="coord" value="80"/>
+    </bean>
+	
+    <bean id="cell81" class="ranball.domain.Cell">
+    	<property name="id" value="81"/>
+    	<property name="type" value="6"/>
+    	<property name="coord" value="81"/>
+    </bean>
+	
+    <bean id="cell82" class="ranball.domain.Cell">
+    	<property name="id" value="82"/>
+    	<property name="type" value="0"/>
+    	<property name="coord" value="82"/>
+    </bean>
+	
+    <bean id="cell83" class="ranball.domain.Cell">
+    	<property name="id" value="83"/>
+    	<property name="type" value="6"/>
+    	<property name="coord" value="83"/>
+    </bean>
+	
+    <bean id="cell84" class="ranball.domain.Cell">
+    	<property name="id" value="84"/>
+    	<property name="type" value="4"/>
+    	<property name="coord" value="84"/>
+    </bean>
+	
+    <bean id="cell85" class="ranball.domain.Cell">
+    	<property name="id" value="85"/>
+    	<property name="type" value="5"/>
+    	<property name="coord" value="85"/>
+    </bean>
+	
+    <bean id="cell86" class="ranball.domain.Cell">
+    	<property name="id" value="86"/>
+    	<property name="type" value="4"/>
+    	<property name="coord" value="86"/>
+    </bean>
+	
+    <bean id="cell87" class="ranball.domain.Cell">
+    	<property name="id" value="87"/>
+    	<property name="type" value="2"/>
+    	<property name="coord" value="87"/>
+    </bean>
+	
+    <bean id="cell88" class="ranball.domain.Cell">
+    	<property name="id" value="88"/>
+    	<property name="type" value="1"/>
+    	<property name="coord" value="88"/>
+    </bean>
+	
+    <bean id="cell89" class="ranball.domain.Cell">
+    	<property name="id" value="89"/>
+    	<property name="type" value="5"/>
+    	<property name="coord" value="89"/>
+    </bean>
+	
+    <bean id="cell90" class="ranball.domain.Cell">
+    	<property name="id" value="90"/>
+    	<property name="type" value="0"/>
+    	<property name="coord" value="90"/>
+    </bean>
+	
+    <bean id="cell91" class="ranball.domain.Cell">
+    	<property name="id" value="91"/>
+    	<property name="type" value="5"/>
+    	<property name="coord" value="91"/>
+    </bean>
+	
+    <bean id="cell92" class="ranball.domain.Cell">
+    	<property name="id" value="92"/>
+    	<property name="type" value="2"/>
+    	<property name="coord" value="92"/>
+    </bean>
+	
+    <bean id="cell93" class="ranball.domain.Cell">
+    	<property name="id" value="93"/>
+    	<property name="type" value="3"/>
+    	<property name="coord" value="93"/>
+    </bean>
+	
+    <bean id="cell94" class="ranball.domain.Cell">
+    	<property name="id" value="94"/>
+    	<property name="type" value="6"/>
+    	<property name="coord" value="94"/>
+    </bean>
+	
+    <bean id="cell95" class="ranball.domain.Cell">
+    	<property name="id" value="95"/>
+    	<property name="type" value="2"/>
+    	<property name="coord" value="95"/>
+    </bean>
+	
+    <bean id="cell96" class="ranball.domain.Cell">
+    	<property name="id" value="96"/>
+    	<property name="type" value="1"/>
+    	<property name="coord" value="96"/>
+    </bean>
+	
+    <bean id="cell97" class="ranball.domain.Cell">
+    	<property name="id" value="97"/>
+    	<property name="type" value="1"/>
+    	<property name="coord" value="97"/>
+    </bean>
+	
+    <bean id="cell98" class="ranball.domain.Cell">
+    	<property name="id" value="98"/>
+    	<property name="type" value="6"/>
+    	<property name="coord" value="98"/>
+    </bean>
+	
+    <bean id="cell99" class="ranball.domain.Cell">
+    	<property name="id" value="99"/>
+    	<property name="type" value="0"/>
+    	<property name="coord" value="99"/>
+    </bean>
+	
+    <bean id="cell100" class="ranball.domain.Cell">
+    	<property name="id" value="100"/>
+    	<property name="type" value="6"/>
+    	<property name="coord" value="100"/>
+    </bean>
+	
+</beans>

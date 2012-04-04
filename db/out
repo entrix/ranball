@@ -1,0 +1,78 @@
+
+	<bean id="terrain" class="ranball.domain.Terrain">
+	    <property name="cells">
+    		<list>
+		        <list>
+    		        <ref bean="cell1" />
+    		        <ref bean="cell2" />
+    		        <ref bean="cell3" />
+    		    </list>
+		        <list>
+    		        <ref bean="cell4" />
+    		        <ref bean="cell5" />
+    		        <ref bean="cell6" />
+    		    </list>
+		        <list>
+    		        <ref bean="cell7" />
+    		        <ref bean="cell8" />
+    		        <ref bean="cell9" />
+    		    </list>
+		    </list>
+	    </property>
+	</bean>    
+    
+	<bean id="cell11" class="ranball.domain.Cell">
+    	<property name="id" value="1"/>
+    	<property name="type" value="1"/>
+    	<property name="coord" value="1"/>
+    </bean>
+	
+	<bean id="cell12" class="ranball.domain.Cell">
+    	<property name="id" value="2"/>
+    	<property name="type" value="2"/>
+    	<property name="coord" value="2"/>
+    </bean>
+	
+	<bean id="cell13" class="ranball.domain.Cell">
+    	<property name="id" value="3"/>
+    	<property name="type" value="3"/>
+    	<property name="coord" value="3"/>
+    </bean>
+	
+	<bean id="cell14" class="ranball.domain.Cell">
+    	<property name="id" value="4"/>
+    	<property name="type" value="4"/>
+    	<property name="coord" value="4"/>
+    </bean>
+	
+	<bean id="cell15" class="ranball.domain.Cell">
+    	<property name="id" value="5"/>
+    	<property name="type" value="5"/>
+    	<property name="coord" value="5"/>
+    </bean>
+	
+	<bean id="cell16" class="ranball.domain.Cell">
+    	<property name="id" value="6"/>
+    	<property name="type" value="6"/>
+    	<property name="coord" value="6"/>
+    </bean>
+	
+	<bean id="cell17" class="ranball.domain.Cell">
+    	<property name="id" value="7"/>
+    	<property name="type" value="7"/>
+    	<property name="coord" value="7"/>
+    </bean>
+	
+	<bean id="cell18" class="ranball.domain.Cell">
+    	<property name="id" value="8"/>
+    	<property name="type" value="8"/>
+    	<property name="coord" value="8"/>
+    </bean>
+	
+	<bean id="cell19" class="ranball.domain.Cell">
+    	<property name="id" value="9"/>
+    	<property name="type" value="9"/>
+    	<property name="coord" value="9"/>
+    </bean>
+	
+	

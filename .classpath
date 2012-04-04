@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="var" path="TOMCAT_HOME/lib/servlet-api.jar"/>
+	<classpathentry kind="var" path="TOMCAT_HOME/lib/jasper.jar"/>
+	<classpathentry kind="var" path="TOMCAT_HOME/lib/jsp-api.jar"/>
+	<classpathentry kind="var" path="TOMCAT_HOME/lib/el-api.jar"/>
+	<classpathentry kind="var" path="TOMCAT_HOME/lib/annotations-api.jar"/>
+	<classpathentry kind="src" path="WEB-INF/src"/>
+	<classpathentry kind="src" output="work" path="work"/>
+	<classpathentry kind="src" path="ranball"/>
+	<classpathentry kind="src" path="web"/>
+	<classpathentry kind="src" path="test"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="jsp"/>
+	<classpathentry kind="lib" path="C:/Users/Entrix/eclipse/ranball/war/WEB-INF/lib/commons-dbcp.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Entrix/eclipse/ranball/war/WEB-INF/lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Entrix/eclipse/ranball/war/WEB-INF/lib/commons-pool.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Entrix/eclipse/ranball/war/WEB-INF/lib/hsqldb.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Entrix/eclipse/ranball/war/WEB-INF/lib/json-lib-2.4-jdk15.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Entrix/eclipse/ranball/war/WEB-INF/lib/json-org.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Entrix/eclipse/ranball/war/WEB-INF/lib/jstl.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Entrix/eclipse/ranball/war/WEB-INF/lib/spring.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Entrix/eclipse/ranball/war/WEB-INF/lib/spring-test.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Entrix/eclipse/ranball/war/WEB-INF/lib/spring-webmvc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Entrix/eclipse/ranball/war/WEB-INF/lib/standard.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/3"/>
+	<classpathentry kind="output" path="WEB-INF/classes"/>
+</classpath>

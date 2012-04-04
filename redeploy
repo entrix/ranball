@@ -1,0 +1,2 @@
+ant undeploy
+ant deploy

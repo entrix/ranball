@@ -1,0 +1,132 @@
+/* this is used to style the turotial page. */
+body {
+	background-image:  url(http://old.parkaventura.ru/tmp/start/header_bg.jpg);
+	background-repeat: repeat-x;
+	margin: 0px;
+	padding: 0px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 75%;
+	color: #666666;
+	line-height: 180%;
+}
+#content {
+	width: 750px;
+	padding-top: 60px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-bottom: 30px;
+}
+#content a:link, #content a:active, #content a:visited {
+	text-decoration : underline;
+	color: #35699B;
+}
+#content a:focus, #content a:hover{
+	text-decoration : none;
+
+	-moz-outline:0;
+	color: #FFFFFF;
+	background-color: #366EA1;
+}
+h1 {
+	color: #366A9C;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 190%;
+}
+code {
+	font-size: 12px;
+	color: #FFFFFF;
+	padding: 15px;
+	width: 705px;
+	background-color: #366E9F;
+	display: block;
+	font-family: "Courier New", Courier, mono;
+	border-left-width: 15px;
+	border-left-style: groove;
+	border-left-color: #0099FF;
+}
+hr {
+	height: 1px;
+	border-top-width: 1px;
+	border-top-style: dotted;
+	border-top-color: #366B9F;
+	padding: 0px;
+	margin-top: 40px;
+	margin-bottom: 20px;
+	display: block;
+	border-bottom-width: 0px;
+	border-bottom-style: none;
+}
+
+
+/* this is the CSS for the menu that you will need. */
+#menu_holder {
+	height: 58px;
+	width: 100%;
+	display: block;
+	position: absolute;
+	top: -58px;
+}
+#nav {
+	height: 58px;
+	width: 542px;
+	margin: 0px auto;
+	padding: 0px;
+	background-image: url(http://old.parkaventura.ru/tmp/start/right.png);
+	background-repeat: no-repeat;
+	background-position: right;
+}
+#hit_area {
+	height: 120px;
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	display: block;
+	/* background-image: url(http://old.parkaventura.ru/tmp/start/badge.jpg); */
+	background-repeat: no-repeat;
+}
+#hit_area2 {
+	width: 100%;
+	background-image: url(http://old.parkaventura.ru/tmp/start/activate_text.jpg);
+	background-repeat: no-repeat;
+	background-position: center top;
+	padding: 0px;
+	display: block;
+	position: absolute;
+	margin: 0px;
+	left: 0px;
+	top: 120px;
+}
+#nav ul {
+	margin: 0px;
+	padding: 0px 0px 0px 21px;
+	height: 58px;
+	list-style-type: none;
+	background-image: url(http://old.parkaventura.ru/tmp/start/left.png);
+	background-repeat: no-repeat;
+}
+#nav li{
+	margin: 0px;
+	padding: 0px;
+	float: left;
+}
+#nav li a:link, #nav li a:active, #nav li a:visited {
+	background-image: url(http://old.parkaventura.ru/tmp/start/middle.png);
+	background-repeat: repeat-x;
+	height: 58px;
+	width: 100px;
+	display: block;
+	line-height: 58px;
+	font-weight: bold;
+	color: #666666;
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+	font-size: 120%;
+}
+#nav li a:focus, #nav li a:hover{
+	text-decoration : none;
+	-moz-outline:0;
+	color: #FFFFFF;
+	background-image: url(http://old.parkaventura.ru/tmp/start/rollOver.png);
+	background-repeat: repeat-x;
+}
