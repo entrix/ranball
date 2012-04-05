@@ -1,0 +1,6 @@
+It's a simple project with
+
+- JSP for generating HTML content and data transfer with XMLHttpRequest (JSON through GET requests)
+- Spring Web Framework to add more powerful functionality with MVC concepts
+- javascript for dynamic visualisation on client side
+- database for storage client data (like Oracle)
