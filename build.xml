@@ -1,92 +1,92 @@
 <?xml version="1.0"?>
 
 <project name="ranball" basedir="." default="usage">
-    <property file="build.properties"/>
+	<property file="build.properties"/>
 
-    <property name="src.dir" value="src"/>
-    <property name="web.dir" value="war"/>
-    <property name="build.dir" value="${web.dir}/WEB-INF/classes"/>
+	<property name="src.dir" value="src"/>
+	<property name="web.dir" value="war"/>
+	<property name="build.dir" value="${web.dir}/WEB-INF/classes"/>
 	<property name="lib.dir" value="${web.dir}/WEB-INF/lib"/>
 	<property name="build.sysclasspath" value="last"/>
 	<property name="name" value="ranball"/>
 	<property name="test.dir" value="test"/>
 	<property name="pseudo.name" value="tmp"/>
-	
-    <path id="master-classpath">
-        <fileset dir="${web.dir}/WEB-INF/lib">
-            <include name="*.jar"/>
-        </fileset>
-        <!-- We need the servlet API classes: -->
-        <!--  * for Tomcat 5/6 use servlet-api.jar -->
-        <!--  * for other app servers - check the docs -->
-        <fileset dir="${appserver.lib}">
-            <include name="servlet*.jar"/>
-        </fileset>
-        <pathelement path="${build.dir}"/>
-    </path>
 
-    <target name="usage">
-        <echo message=""/>
-        <echo message="${name} build file"/>
-        <echo message="-----------------------------------"/>
-        <echo message=""/>
-        <echo message="Available targets are:"/>
-        <echo message=""/>
-        <echo message="build     --> Build the application"/>
-        <echo message="deploy    --> Deploy application as directory"/>
-        <echo message="deploywar --> Deploy application as a WAR file"/>
-        <echo message="install   --> Install application in Tomcat"/>
-        <echo message="reload    --> Reload application in Tomcat"/>
-        <echo message="start     --> Start Tomcat application"/>
-        <echo message="stop      --> Stop Tomcat application"/>
-        <echo message="list      --> List Tomcat applications"/>
-        <echo message=""/>
-    </target>
+	<path id="master-classpath">
+		<fileset dir="${web.dir}/WEB-INF/lib">
+			<include name="*.jar"/>
+		</fileset>
+		<!-- We need the servlet API classes: -->
+		<!--  * for Tomcat 5/6 use servlet-api.jar -->
+		<!--  * for other app servers - check the docs -->
+		<fileset dir="${appserver.lib}">
+			<include name="servlet*.jar"/>
+		</fileset>
+		<pathelement path="${build.dir}"/>
+	</path>
 
-    <target name="build" description="Compile main source tree java files">
-        <mkdir dir="${build.dir}"/>
-        <javac destdir="${build.dir}" source="1.6" target="1.6" debug="true"
+	<target name="usage">
+		<echo message=""/>
+		<echo message="${name} build file"/>
+		<echo message="-----------------------------------"/>
+		<echo message=""/>
+		<echo message="Available targets are:"/>
+		<echo message=""/>
+		<echo message="build     --> Build the application"/>
+		<echo message="deploy    --> Deploy application as directory"/>
+		<echo message="deploywar --> Deploy application as a WAR file"/>
+		<echo message="install   --> Install application in Tomcat"/>
+		<echo message="reload    --> Reload application in Tomcat"/>
+		<echo message="start     --> Start Tomcat application"/>
+		<echo message="stop      --> Stop Tomcat application"/>
+		<echo message="list      --> List Tomcat applications"/>
+		<echo message=""/>
+	</target>
+
+	<target name="build" description="Compile main source tree java files">
+		<mkdir dir="${build.dir}"/>
+		<javac destdir="${build.dir}" source="1.6" target="1.6" debug="true"
                deprecation="false" optimize="false" failonerror="true">
-            <src path="${src.dir}"/>
-            <classpath refid="master-classpath"/>
-        </javac>
-    </target>
+			<src path="${src.dir}"/>
+			<classpath refid="master-classpath"/>
+		</javac>
+	</target>
 
-    <target name="deploy" depends="build" description="Deploy application">
-        <copy todir="${deploy.path}/${pseudo.name}" preservelastmodified="true">
-            <fileset dir="${web.dir}">
-                <include name="**/*.*"/>
-            </fileset>
-        </copy>
-    </target>
+	<target name="deploy" depends="build" description="Deploy application">
+		<copy todir="${deploy.path}/${pseudo.name}" preservelastmodified="true">
+			<fileset dir="${web.dir}">
+				<include name="**/*.*"/>
+			</fileset>
+		</copy>
+	</target>
 
-    <target name="deploywar" depends="build" description="Deploy application as a WAR file">
-        <war destfile="${name}.war"
+	<target name="deploywar" depends="build" description="Deploy application as a WAR file">
+		<war destfile="${name}.war"
              webxml="${web.dir}/WEB-INF/web.xml">
-            <fileset dir="${web.dir}">
-                <include name="**/*.*"/>
-            </fileset>
-        </war>
-        <copy todir="${deploy.path}" preservelastmodified="true">
-            <fileset dir=".">
-                <include name="*.war"/>
-            </fileset>
-        </copy>
-    </target>
-    
-<!-- ============================================================== -->
-<!-- Tomcat tasks - remove these if you don't have Tomcat installed -->
-<!-- ============================================================== -->
+			<fileset dir="${web.dir}">
+				<include name="**/*.*"/>
+			</fileset>
+		</war>
+		<copy todir="${deploy.path}" preservelastmodified="true">
+			<fileset dir=".">
+				<include name="*.war"/>
+			</fileset>
+		</copy>
+	</target>
 
-    <path id="catalina-ant-classpath">
-        <!-- We need the Catalina jars for Tomcat -->
-        <!--  * for other app servers - check the docs -->
-        <fileset dir="">
-            <include name="catalina-ant.jar"/>
-        </fileset>
-    </path>
+	<!-- ============================================================== -->
+	<!-- Tomcat tasks - remove these if you don't have Tomcat installed -->
+	<!-- ============================================================== -->
 
-<!--
+	<path id="catalina-ant-classpath">
+		<!-- We need the Catalina jars for Tomcat -->
+		<!--  * for other app servers - check the docs -->
+		<fileset dir="">
+			<include name="catalina-ant.jar"/>
+		</fileset>
+	</path>
+
+	<!--
     <taskdef name="install" classname="org.apache.catalina.ant.InstallTask">
         <classpath refid="catalina-ant-classpath"/>
     </taskdef>
@@ -103,69 +103,69 @@
         <classpath refid="catalina-ant-classpath"/>
     </taskdef>
 -->
-	
-    <target name="install" description="Install application in Tomcat">
-        <install url="${tomcat.manager.url}"
+
+	<target name="install" description="Install application in Tomcat">
+		<install url="${tomcat.manager.url}"
                  username="${tomcat.manager.username}"
                  password="${tomcat.manager.password}"
                  path="/${name}"
                  war="${name}"/>
-    </target>
+	</target>
 
-    <target name="reload" description="Reload application in Tomcat">
-        <reload url="${tomcat.manager.url}"
+	<target name="reload" description="Reload application in Tomcat">
+		<reload url="${tomcat.manager.url}"
                  username="${tomcat.manager.username}"
                  password="${tomcat.manager.password}"
                  path="/${name}"/>
-    </target>
+	</target>
 
-    <target name="start" description="Start Tomcat application">
-        <start url="${tomcat.manager.url}"
+	<target name="start" description="Start Tomcat application">
+		<start url="${tomcat.manager.url}"
                  username="${tomcat.manager.username}"
                  password="${tomcat.manager.password}"
                  path="/${name}"/>
-    </target>
+	</target>
 
-    <target name="stop" description="Stop Tomcat application">
-        <stop url="${tomcat.manager.url}"
+	<target name="stop" description="Stop Tomcat application">
+		<stop url="${tomcat.manager.url}"
                  username="${tomcat.manager.username}"
                  password="${tomcat.manager.password}"
                  path="/${name}"/>
-    </target>
+	</target>
 
-    <target name="list" description="List Tomcat applications">
-        <list url="${tomcat.manager.url}"
+	<target name="list" description="List Tomcat applications">
+		<list url="${tomcat.manager.url}"
                  username="${tomcat.manager.username}"
                  password="${tomcat.manager.password}"/>
-    </target>
-        
-    <target name="buildtests" description="Compile test tree java files">
-        <mkdir dir="${build.dir}"/>
-        <javac destdir="${build.dir}" source="1.5" target="1.5" debug="true"
+	</target>
+
+	<target name="buildtests" description="Compile test tree java files">
+		<mkdir dir="${build.dir}"/>
+		<javac destdir="${build.dir}" source="1.5" target="1.5" debug="true"
             deprecation="false" optimize="false" failonerror="true">
-            <src path="${test.dir}"/>
-            <classpath refid="master-classpath"/>
-        </javac>
-    </target>
-    
-    <target name="tests" depends="build, buildtests" description="Run tests">
-        <junit printsummary="on"
+			<src path="${test.dir}"/>
+			<classpath refid="master-classpath"/>
+		</javac>
+	</target>
+
+	<target name="tests" depends="build, buildtests" description="Run tests">
+		<junit printsummary="on"
             fork="false"
             haltonfailure="false"
             failureproperty="tests.failed"
             showoutput="true">
-            <classpath refid="master-classpath"/>
-            <formatter type="brief" usefile="false"/>
-            
-            <batchtest>
-                <fileset dir="${build.dir}">
-                    <include name="**/*Tests.*"/>
-                </fileset>
-            </batchtest>
-            
-        </junit>
-        
-        <fail if="tests.failed">
+			<classpath refid="master-classpath"/>
+			<formatter type="brief" usefile="false"/>
+
+			<batchtest>
+				<fileset dir="${build.dir}">
+					<include name="**/*Tests.*"/>
+				</fileset>
+			</batchtest>
+
+		</junit>
+
+		<fail if="tests.failed">
             tests.failed=${tests.failed}
             ***********************************************************
             ***********************************************************
@@ -173,23 +173,220 @@
             ***********************************************************
             ***********************************************************
         </fail>
-    </target>
-	
-    <target name="clean" description="Clean output directories">
-        <delete>
-            <fileset dir="${build.dir}">
-                <include name="**/*.class"/>
-            </fileset>
-        </delete>
-    </target>
+	</target>
 
-    <target name="undeploy" description="Un-Deploy application">
-        <delete>
-            <fileset dir="${deploy.path}/${pseudo.name}">
-                <include name="**/*.*"/>
-            </fileset>
-        </delete>
-    </target>
-<!-- End Tomcat tasks -->
+	<target name="clean" description="Clean output directories">
+		<delete>
+			<fileset dir="${build.dir}">
+				<include name="**/*.class"/>
+			</fileset>
+		</delete>
+	</target>
+
+	<target name="undeploy" description="Un-Deploy application">
+		<delete>
+			<fileset dir="${deploy.path}/${pseudo.name}">
+				<include name="**/*.*"/>
+			</fileset>
+		</delete>
+	</target>
+
+	<target name="createTables">
+		<echo message="CREATE TABLES USING: ${db.driver} ${db.url}"/>
+		<sql driver="${db.driver}"
+             url="${db.url}"
+             userid="${db.user}"
+             password="${db.pw}"
+             onerror="continue"
+             src="db/create_products.sql">
+			<classpath refid="master-classpath"/>
+		</sql>
+	</target>
+
+	<target name="dropTables">
+		<echo message="DROP TABLES USING: ${db.driver} ${db.url}"/>
+		<sql driver="${db.driver}"
+             url="${db.url}"
+             userid="${db.user}"
+             password="${db.pw}"
+             onerror="continue">
+			<classpath refid="master-classpath"/>
+
+        DROP TABLE products;
+
+        </sql>
+	</target>
+
+	<target name="loadCells">
+		<echo message="LOAD DATA USING: ${db.driver} ${db.url}"/>
+		<sql driver="${db.driver}"
+             url="${db.url}"
+             userid="${db.user}"
+             password="${db.pw}"
+             onerror="continue"
+             src="db/load_cells.sql">
+			<classpath refid="master-classpath"/>
+		</sql>
+	</target>
+
+	<target name="loadUsers">
+		<echo message="LOAD DATA USING: ${db.driver} ${db.url}"/>
+		<sql driver="${db.driver}"
+             url="${db.url}"
+             userid="${db.user}"
+             password="${db.pw}"
+             onerror="continue"
+             src="db/load_users.sql">
+			<classpath refid="master-classpath"/>
+		</sql>
+	</target>
+
+	<target name="loadPermissions">
+		<echo message="LOAD DATA USING: ${db.driver} ${db.url}"/>
+		<sql driver="${db.driver}"
+             url="${db.url}"
+             userid="${db.user}"
+             password="${db.pw}"
+             onerror="continue"
+             src="db/load_permissions.sql">
+			<classpath refid="master-classpath"/>
+		</sql>
+	</target>
+
+	<target name="printCells">
+		<echo message="PRINT DATA USING: ${db.driver} ${db.url}"/>
+		<sql driver="${db.driver}"
+	             url="${db.url}"
+	             userid="${db.user}"
+	             password="${db.pw}"
+	             onerror="continue"
+	             print="true">
+			<classpath refid="master-classpath"/>
+	        	
+	        	SELECT * FROM cells;
+	        </sql>
+	</target>
+
+	<target name="printUsers">
+		<echo message="PRINT DATA USING: ${db.driver} ${db.url}"/>
+		<sql driver="${db.driver}"
+	             url="${db.url}"
+	             userid="${db.user}"
+	             password="${db.pw}"
+	             onerror="continue"
+	             print="true">
+			<classpath refid="master-classpath"/>
+	        	
+	        	SELECT * FROM users;
+	        </sql>
+	</target>
+
+	<target name="printPermissions">
+		<echo message="PRINT DATA USING: ${db.driver} ${db.url}"/>
+		<sql driver="${db.driver}"
+	             url="${db.url}"
+	             userid="${db.user}"
+	             password="${db.pw}"
+	             onerror="continue"
+	             print="true">
+			<classpath refid="master-classpath"/>
+	        	
+	        	SELECT * FROM permissions;
+	        </sql>
+	</target>
+
+	<target name="clearCells">
+		<echo message="CLEAR DATA USING: ${db.driver} ${db.url}"/>
+		<sql driver="${db.driver}"
+             url="${db.url}"
+             userid="${db.user}"
+             password="${db.pw}"
+             onerror="continue">
+			<classpath refid="master-classpath"/>
+
+        DELETE FROM cells;
+
+        </sql>
+	</target>
+
+	<target name="clearUsers">
+		<echo message="CLEAR DATA USING: ${db.driver} ${db.url}"/>
+		<sql driver="${db.driver}"
+             url="${db.url}"
+             userid="${db.user}"
+             password="${db.pw}"
+             onerror="continue">
+			<classpath refid="master-classpath"/>
+
+        DELETE FROM users;
+
+        </sql>
+	</target>
+
+	<target name="clearPermissions">
+		<echo message="CLEAR DATA USING: ${db.driver} ${db.url}"/>
+		<sql driver="${db.driver}"
+             url="${db.url}"
+             userid="${db.user}"
+             password="${db.pw}"
+             onerror="continue">
+			<classpath refid="master-classpath"/>
+
+        DELETE FROM permissions;
+
+        </sql>
+	</target>
+
+	<target name="shutdownDb">
+		<echo message="SHUT DOWN DATABASE USING: ${db.driver} ${db.url}"/>
+		<sql driver="${db.driver}"
+             url="${db.url}"
+             userid="${db.user}"
+             password="${db.pw}"
+             onerror="continue">
+			<classpath refid="master-classpath"/>
+
+        SHUTDOWN;
+
+        </sql>
+	</target>
+
+	<path id="test-classpath">
+		<fileset dir="${web.dir}/WEB-INF/lib">
+			<include name="*.jar"/>
+		</fileset>
+		<pathelement path="${build.dir}"/>
+		<pathelement path="${test.dir}"/>
+		<pathelement path="${web.dir}/WEB-INF/classes"/>
+	</path>
+
+	<target name="dbTests" depends="build, buildtests,dropTables,createTables,loadCells, loadUsers, loadPermissions" 
+            description="Run db tests">
+		<junit printsummary="on"
+            fork="false"
+            haltonfailure="false"
+            failureproperty="tests.failed"
+            showoutput="true">
+			<classpath refid="test-classpath"/>
+			<formatter type="brief" usefile="false"/>
+
+			<batchtest>
+				<fileset dir="${build.dir}">
+					<include name="**/Jdbc*Tests.*"/>
+				</fileset>
+			</batchtest>
+
+		</junit>
+
+		<fail if="tests.failed">
+            tests.failed=${tests.failed}
+            ***********************************************************
+            ***********************************************************
+            ****  One or more tests failed!  Check the output ...  ****
+            ***********************************************************
+            ***********************************************************
+        </fail>
+	</target>
+	<!-- End Tomcat tasks -->
 
 </project>

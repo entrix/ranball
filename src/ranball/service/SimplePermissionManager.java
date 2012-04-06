@@ -12,21 +12,23 @@ import ranball.domain.GridEntity;
 import ranball.domain.Permission;
 import ranball.domain.User;
 import ranball.domain.Terrain;
+import ranball.repository.CellDao;
+import ranball.repository.PermissionDao;
+import ranball.repository.UserDao;
 
 public class SimplePermissionManager implements PermissionManager {
 
 //	protected final Log logger = LogFactory.getLog(getClass());
 	
-	private List<Terrain> terrains;
-	private List<User> users;
-	private List<Permission> permissions;
+	private CellDao cellDao;
+	private UserDao userDao;
+	private PermissionDao permissionDao;
 
 	public Grid getGrid(Integer terrainId, String userName) {
-		Terrain terrain = terrains.get(terrainId);
-		List<List<Cell>> cells = terrain.getCells();
+		List<List<Cell>> cells = cellDao.getCellList(terrainId);
 		Integer userId = null;
 		
-		for (User user : users) {
+		for (User user : userDao.getUserIlst()) {
 			if (user.getName().equals(userName)) {
 				userId = user.getId();
 			}
@@ -45,7 +47,7 @@ public class SimplePermissionManager implements PermissionManager {
 			}
 		}
 		
-		for (Permission permission : permissions) {
+		for (Permission permission : permissionDao.getPermissionList()) {
 			if(permission.getTerrainId() == terrainId && permission.getUserId() == userId) {
 				int n = permission.getCellId();
 //				logger.info("permission index cellId = " + n);
@@ -61,13 +63,13 @@ public class SimplePermissionManager implements PermissionManager {
 	public void makeShot(Integer cellNumber, Integer terrainId, String userName, Integer shotValue) {
 		Integer userId = null;
 		
-		for (User user : users) {
+		for (User user : userDao.getUserIlst()) {
 			if (user.getName().equals(userName)) {
 				userId = user.getId();
 			}
 		}
 		
-		for (Permission permission : permissions) {
+		for (Permission permission : permissionDao.getPermissionList()) {
 			if(permission.getTerrainId() == terrainId && permission.getUserId() == userId) {
 				int n = permission.getCellId();
 				//
@@ -84,19 +86,19 @@ public class SimplePermissionManager implements PermissionManager {
 		permission.setTerrainId(terrainId);
 		permission.setUserId(userId);
 		permission.setCellValue(shotValue);
-		permissions.add(permission);
+		permissionDao.savePermission(permission);
 	}
 
-	public void setTerrains(List<Terrain> terrains) {
-		this.terrains = terrains;
+	public void setCellDao(CellDao cellDao) {
+		this.cellDao = cellDao;
 	}
 
-	public void setUsers(List<User> users) {
-		this.users = users;
+	public void setUserDao(UserDao userDao) {
+		this.userDao = userDao;
 	}
 
-	public void setPermissions(List<Permission> permissions) {
-		this.permissions = permissions;
+	public void setPermissionDao(PermissionDao permissionDao) {
+		this.permissionDao = permissionDao;
 	}
 
 }
