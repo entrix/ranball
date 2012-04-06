@@ -14,7 +14,5 @@ public class StartControllerTests extends TestCase {
     	ModelAndView modelAndView = controller.handleRequest(null, null);		
         assertEquals("start", modelAndView.getViewName());
         assertNotNull(modelAndView.getModel());
-        String nowValue = (String) modelAndView.getModel().get("now");
-        assertNotNull(nowValue);
     }
 }

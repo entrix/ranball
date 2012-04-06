@@ -1,5 +1,7 @@
 package ranball.web;
 
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.springframework.web.servlet.mvc.Controller;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -10,10 +12,13 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import ranball.domain.Grid;
+import ranball.domain.GridEntity;
 import ranball.domain.Terrain;
-import ranball.service.TerrainManager;
+import ranball.service.PermissionManager;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -21,22 +26,32 @@ public class PrintController implements Controller {
 
     protected final Log logger = LogFactory.getLog(getClass());
     
-    private TerrainManager terrainManager;
+    private PermissionManager permissionManager;
     
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Map<String, Object> myModel = new TreeMap<String, Object>();
-        Terrain terrain = this.terrainManager.getGrid();
-        
-        myModel.put("cells", terrain.getCells());
+    	
+    	Map<String, Object> myModel = new TreeMap<String, Object>();
+		List<List<GridEntity>> gridEntities = null;
 
-        return new ModelAndView("print", "model", myModel);
+		if (request != null) {
+			logger.info("user: " + request.getParameter("name")
+					+ ", region: " + request.getParameter("region"));
+			int terrainId = Integer.parseInt(request.getParameter("region"));
+			String userName = request.getParameter("name");
+			Grid grid = this.permissionManager.getGrid(terrainId, userName);
+			gridEntities = grid.getGridEntities();
+		}
+		
+		myModel.put("gridEntities", gridEntities);
+
+		return new ModelAndView("print", "model", myModel);
     }
 
-    public void setTerrainManager(TerrainManager terrainManager) {
-        String answer = terrainManager == null ?
+    public void setPermissionManager(PermissionManager permissionManager) {
+        String answer = permissionManager == null ?
         		"terrainManager is null" : "terrainManager is'nt null";
         logger.info("*******************************\nInitializing start view: " + answer);
-        this.terrainManager = terrainManager;
+        this.permissionManager = permissionManager;
     }
 }

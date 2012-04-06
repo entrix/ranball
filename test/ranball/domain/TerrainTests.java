@@ -10,7 +10,7 @@ public class TerrainTests extends TestCase {
 	
 	protected void setUp() throws Exception {
 		terrain = new Terrain();
-		cells = InMemoryDefaultCells.getDefaultCells();
+		cells = InMemoryDefaultDefaultEntities.getDefaultCells();
 		terrain.setCells(cells);
 	}
 
@@ -22,7 +22,7 @@ public class TerrainTests extends TestCase {
 	public void testGetAndSetCells() {
 		cells = terrain.getCells();
 		assertNotNull("Terrain.getCells() method failed", cells);
-		assertEquals("Terrain.setCells method failed", true, InMemoryDefaultCells.checkDefaultCells(cells));
+		assertEquals("Terrain.setCells method failed", true, InMemoryDefaultDefaultEntities.checkDefaultCells(cells));
 	}
 	
 	public void testGetAndSetCell() {

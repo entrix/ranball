@@ -8,16 +8,16 @@
     <h3>Cells</h3>
     <table border="1">
     	<thead>
-    		<td><b>id</b></td>
-    		<td><b>type</b></td>
-    		<td><b>coord</b></td>
+    		<td><b>cellId</b></td>
+    		<td><b>cellType</b></td>
+    		<td><b>cellValue</b></td>
     	</thead>
-    	<c:forEach items="${model.cells}" var="cellList">
-    		<c:forEach items="${cellList}" var="cell">
+    	<c:forEach items="${model.gridEntities}" var="gridEntitiesList">
+    		<c:forEach items="${gridEntitiesList}" var="gridEntity">
    			<tr>
-    			<td><c:out value="${cell.id}"/></td>
-   				<td><c:out value="${cell.type}"/></td>
-   				<td><c:out value="${cell.coord}"/></td>
+    			<td><c:out value="${gridEntity.cellId}"/></td>
+   				<td><c:out value="${gridEntity.cellType}"/></td>
+   				<td><c:out value="${gridEntity.cellValue}"/></td>
    			</tr>
     		</c:forEach>
    	   	</c:forEach>

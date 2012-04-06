@@ -7,8 +7,67 @@
 
   <!-- the application context definition for the springapp DispatcherServlet -->
   
-    <bean id="terrainManager" class="ranball.service.SimpleTerrainManager">
-		<property name="terrain" ref="terrain"/>
+    <bean id="permissionManager" class="ranball.service.SimplePermissionManager">
+    	<property name="terrains"> 
+			<list>
+				<ref bean="terrain"/>
+    		</list>
+    	</property>
+    	<property name="users"> 
+			<list>
+				<ref bean="user"/>
+    		</list>
+    	</property>
+    	<property name="permissions"> 
+			<list>
+				<ref bean="permission1"/>
+				<ref bean="permission2"/>
+				<ref bean="permission3"/>
+				<ref bean="permission4"/>
+				<ref bean="permission5"/>
+    		</list>
+    	</property>
+    </bean>
+    
+    <bean id="user" class="ranball.domain.User">
+    	<property name="id" value="0" />
+    	<property name="name" value="entrix" />
+    	<property name="rating" value="0" /> 
+    </bean>
+
+    <bean id="permission1" class="ranball.domain.Permission">
+    	<property name="cellId" value="0" />
+    	<property name="terrainId" value="0" />
+    	<property name="userId" value="0" />
+    	<property name="cellValue" value="-1" /> 
+    </bean>
+    
+    <bean id="permission2" class="ranball.domain.Permission">
+    	<property name="cellId" value="5" />
+    	<property name="terrainId" value="0" />
+    	<property name="userId" value="0" />
+    	<property name="cellValue" value="-1" /> 
+    </bean>
+    
+    <bean id="permission3" class="ranball.domain.Permission">
+    	<property name="cellId" value="10" />
+    	<property name="terrainId" value="0" />
+    	<property name="userId" value="0" />
+    	<property name="cellValue" value="2" /> 
+    </bean>
+    
+    <bean id="permission4" class="ranball.domain.Permission">
+    	<property name="cellId" value="15" />
+    	<property name="terrainId" value="0" />
+    	<property name="userId" value="0" />
+    	<property name="cellValue" value="-1" /> 
+    </bean>
+    
+    <bean id="permission5" class="ranball.domain.Permission">
+    	<property name="cellId" value="20" />
+    	<property name="terrainId" value="0" />
+    	<property name="userId" value="0" />
+    	<property name="cellValue" value="-1" /> 
     </bean>
 
   	<import resource="beans.xml"/>
@@ -18,13 +77,15 @@
     </bean>
     
     <bean name="/target.htm" class="ranball.web.TargetController">
-       	<property name="terrainManager" ref="terrainManager" />
+       	<property name="permissionManager" ref="permissionManager" />
     </bean>
     
-    <bean name="/start.htm" class="ranball.web.StartController"/>
+    <bean name="/start.htm" class="ranball.web.StartController">
+        <property name="permissionManager" ref="permissionManager" />
+    </bean>
   
     <bean name="/print.htm" class="ranball.web.PrintController">
-    	<property name="terrainManager" ref="terrainManager" />
+    	<property name="permissionManager" ref="permissionManager" />
     </bean>
 
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">

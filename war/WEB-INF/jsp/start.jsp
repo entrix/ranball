@@ -52,6 +52,7 @@
 </div>
 <div style="margin-top: 10px;">
 	<table id="table" style="margin-left:450px; margin-top:120px;">
+<%--
 	<%
 		for (int i = 0; i < 10; ++i) {
 			%><tr>
@@ -64,6 +65,16 @@
 			</tr><%
 		}
 	%>
+--%>
+    	<c:forEach items="${model.gridEntities}" var="gridEntitiesList">
+    		<c:forEach items="${gridEntitiesList}" var="gridEntity">
+   			<tr>
+   				<td><img id="bin-<c:out value="${gridEntity.cellId}"/>" 
+   						 src="<c:out value="${gridEntity.cellValue}"/>|<c:out value="${gridEntity.cellType}"/>" 
+						 class="bin"></td>
+   			</tr>
+    		</c:forEach>
+   	   	</c:forEach>
 	</table>
 	<img id="target" height="45" width="45" src="http://old.parkaventura.ru/tmp/start/325px-Glass_button_red.svg.png"/>
 	<p id="result"></p>

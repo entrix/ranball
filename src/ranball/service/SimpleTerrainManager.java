@@ -2,7 +2,7 @@ package ranball.service;
 
 import ranball.domain.Terrain;
 
-public class SimpleTerrainManager implements TerrainManager {
+public class SimpleTerrainManager {
 
 	private Terrain terrain;
 
@@ -14,12 +14,10 @@ public class SimpleTerrainManager implements TerrainManager {
 		this.terrain = terrain;
 	}
 
-	@Override
 	public Terrain getGrid() {
 		return getTerrain();
 	}
 
-	@Override
 	public void makeShot(Integer cellNumber) {
 		// TODO Auto-generated method stub
 		
