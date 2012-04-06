@@ -12,7 +12,7 @@ import ranball.domain.Permission;
 
 public class JdbcPermissionDao extends SimpleJdbcDaoSupport implements PermissionDao {
 
-	public List<Permission> getPermissionList(Integer terrainId, String userId) {
+	public List<Permission> getPermissionList(Integer terrainId, Integer userId) {
 		return getSimpleJdbcTemplate().query(
 	    		"select cell_id, terrain_id, user_id, cell_value from Permissions" +
 	    		"where terrain_id = ? and user_id = ?", 

@@ -198,7 +198,7 @@
              userid="${db.user}"
              password="${db.pw}"
              onerror="continue"
-             src="db/create_products.sql">
+             src="db/create_tables.sql">
 			<classpath refid="master-classpath"/>
 		</sql>
 	</target>
@@ -212,7 +212,9 @@
              onerror="continue">
 			<classpath refid="master-classpath"/>
 
-        DROP TABLE products;
+			DROP TABLE cells;
+			DROP TABLE users;
+			DROP TABLE permissions;
 
         </sql>
 	</target>

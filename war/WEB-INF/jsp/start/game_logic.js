@@ -119,7 +119,7 @@ function onTableClick(event)
 	var coord = { 'number' : n, 'region' : 0 };
 	var req = new createRequest('http://localhost:8080/tmp/target.htm?coord=' + JSON.stringify(coord),
 				function(func, req) {
-					//alert(req);
+
 					var token = func.apply(this, req);
 					
 					if (token != -1) {

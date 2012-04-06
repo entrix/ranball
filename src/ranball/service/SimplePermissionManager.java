@@ -28,7 +28,7 @@ public class SimplePermissionManager implements PermissionManager {
 		List<List<Cell>> cells = cellDao.getCellList(terrainId);
 		Integer userId = null;
 		
-		for (User user : userDao.getUserIlst()) {
+		for (User user : userDao.getUserList()) {
 			if (user.getName().equals(userName)) {
 				userId = user.getId();
 			}
@@ -47,7 +47,7 @@ public class SimplePermissionManager implements PermissionManager {
 			}
 		}
 		
-		for (Permission permission : permissionDao.getPermissionList()) {
+		for (Permission permission : permissionDao.getPermissionList(terrainId, userId)) {
 			if(permission.getTerrainId() == terrainId && permission.getUserId() == userId) {
 				int n = permission.getCellId();
 //				logger.info("permission index cellId = " + n);
@@ -63,13 +63,13 @@ public class SimplePermissionManager implements PermissionManager {
 	public void makeShot(Integer cellNumber, Integer terrainId, String userName, Integer shotValue) {
 		Integer userId = null;
 		
-		for (User user : userDao.getUserIlst()) {
+		for (User user : userDao.getUserList()) {
 			if (user.getName().equals(userName)) {
 				userId = user.getId();
 			}
 		}
 		
-		for (Permission permission : permissionDao.getPermissionList()) {
+		for (Permission permission : permissionDao.getPermissionList(terrainId, userId)) {
 			if(permission.getTerrainId() == terrainId && permission.getUserId() == userId) {
 				int n = permission.getCellId();
 				//
